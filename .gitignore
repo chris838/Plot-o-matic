@@ -1,3 +1,6 @@
 *.pyc
 *.orig
 *.plot_data
+
+*~
+#*#
