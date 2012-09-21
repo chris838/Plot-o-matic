@@ -42,7 +42,8 @@ class MPLTwoAxisPlot(Viewer):
     
   traits_view = View(
     Item(name = 'name', label = 'Plot name'),
-    Item(name = 'y_expressions', label = 'Expression(s)', editor=TextEditor(enter_set=True, auto_set=False)),
+    Item(name = 'x_expressions', label = 'X Axis Expression(s)', editor=TextEditor(enter_set=True, auto_set=False)),
+    Item(name = 'y_expressions', label = 'Y Axis Expression(s)', editor=TextEditor(enter_set=True, auto_set=False)),
     Item(label = 'Use commas\nfor multi-line plots.'),
     HGroup(
       Item(name = 'legend', label = 'Show legend'),
@@ -126,7 +127,9 @@ class MPLTwoAxisPlot(Viewer):
         ys = self.variables.new_expression(y_expr).get_array(first, last)
         
         if len(ys) != 0:
-          x_expr = self.get_x_exprs()[0]
+          x_exprs = self.get_x_exprs()
+          m = min( n, len(x_exprs) )
+          x_expr = x_exprs[m]
           xs = self.variables.new_expression(x_expr).get_array(first, last)
         else:
           xs = [0]
