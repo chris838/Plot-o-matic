@@ -14,7 +14,7 @@ class CSVDecoder(DataDecoder):
     title='CSV decoder'
   )
   separator = Str(',')
-  variable_names = Str('a,t1,b,t2')
+  variable_names = Str('a,t1,b,t2,c,t3')
   
   def decode(self, data):
     """

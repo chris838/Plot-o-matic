@@ -18,8 +18,8 @@ class MPLTwoAxisPlot(Viewer):
   """
   name = Str('MPL Two Axis Plot')
   figure = Instance(Figure, ())
-  x_expressions = Str('sample_num')
-  y_expressions = Str
+  x_expressions = Str('t1,t2,t3')
+  y_expressions = Str('a,b,c')
   
   x_max = Float
   x_max_auto = Bool(True)
